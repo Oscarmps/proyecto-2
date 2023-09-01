@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+    margin: o;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+body {
+    font-family: "public sans", sans-serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+   background-image: url("imagenes/fondo2.jpg");
+   background-repeat: no-repeat;
+   background-position: 2x 2px;
+   background-size: 1250px 1250px;
+
+
+.grid-conteiner > * {
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;   
+}
+
+.header {
+    grid-area: header;
+    background-color: none;
+#columnas1 {
+    column-count: 2;
+    column-gap: 0px;
+    column-rule: none ;
+    list-style: none;
+}
+ }
+.navbar {
+    grid-area: navbar;
+    background-color:none;
+
+}
+
+.main {
+    grid-area: main;
+    background-color: none;
+
+}
+ .footer{
+    grid-area: footer;
+    background-color: none;
+}
+.grid-conteiner{
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 
+    "header"
+    "navbar"
+    "main";
+}
+ @media (min-width: 600px) {
+    .grid-conteiner {
+        grid-template: 
+        "header  header" 100px
+        "navbar  navbar" 50px
+        "main" auto;
+ 
+    }
+ }
+  @media (min-width: 600px) {
+    .grid-conteiner {
+        grid-template-columns: 200px auto;
+        grid-template-rows: 100px 50px auto 100px;
+        grid-template-areas: 
+        "header header header" 100px
+        "navbar main " auto;
+    } 
+ }
